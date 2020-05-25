@@ -3,11 +3,10 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import Game from "./game";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Game />
+    <App />
   </React.StrictMode>,
   document.getElementById("root")
 );
