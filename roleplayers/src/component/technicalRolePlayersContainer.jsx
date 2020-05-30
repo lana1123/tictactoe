@@ -5,6 +5,7 @@ import RolePlayersRole from "./rolePlayersRole";
 class TechnicalRolePlayersContainer extends Component {
   render() {
     const rows = [];
+
     let lastCategory = null;
     this.props.roleplayers.forEach((roleplayers) => {
       if (roleplayers.category !== lastCategory) {
@@ -18,7 +19,10 @@ class TechnicalRolePlayersContainer extends Component {
       rows.push(
         <RolePlayersRole
           roleplayerdetails={roleplayers}
+          currentRolePlayers={this.props.currentRolePlayers}
+          //key={this.props.currentRolePlayers.key}
           key={roleplayers.role}
+          handleInput={this.props.handleInput}
         />
       );
       lastCategory = roleplayers.category;
