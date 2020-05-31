@@ -2,11 +2,15 @@ import React from "react";
 import RolePlayersCategoryRow from "./rolePlayersCategoryRow";
 import RolePlayersRole from "./rolePlayersRole";
 
-const TechnicalRolePlayersContainer = ({ category, role }) => {
+const TechnicalRolePlayersContainer = ({ category, role, savedRoles }) => {
   return (
     <div>
       <RolePlayersCategoryRow category={category} role={role} />
-      <RolePlayersRole category={category} role={role} />
+      <RolePlayersRole
+        category={category}
+        role={role}
+        savedRoles={savedRoles}
+      />
     </div>
   );
 };

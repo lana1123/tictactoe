@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../index.css";
 
-const RolePlayerDetails = ({ role }) => {
+const RolePlayerDetails = ({ role, savedRoles }) => {
   const [name, setName] = useState("");
   const [title, setTitle] = useState("");
 
@@ -28,6 +28,14 @@ const RolePlayerDetails = ({ role }) => {
           onChange={(e) => setTitle(e.target.value)}
         />
       </div>
+      <button
+        type="submit"
+        onClick={() => {
+          savedRoles(name, title);
+        }}
+      >
+        Save
+      </button>
     </div>
   );
 };

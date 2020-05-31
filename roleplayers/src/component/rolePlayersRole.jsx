@@ -2,12 +2,12 @@ import React from "react";
 import RolePlayerDetails from "./rolePlayerDetails";
 import "../index.css";
 
-const RolePlayersRole = ({ role }) => {
+const RolePlayersRole = ({ role, savedRoles }) => {
   return (
     <div>
       <div className="RolePlayersRole">{role}</div>
       <div>
-        <RolePlayerDetails role={role} />
+        <RolePlayerDetails role={role} savedRoles={savedRoles} />
       </div>
     </div>
   );

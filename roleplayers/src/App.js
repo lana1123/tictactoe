@@ -4,7 +4,7 @@ import TechnicalRolePlayersContainer from "./component/technicalRolePlayersConta
 
 class App extends Component {
   state = {
-    roles: [],
+    allRoles: [],
   };
 
   // componentDidMount() {
@@ -133,6 +133,15 @@ class App extends Component {
   //   });
   // }
 
+  savedAllRoles = (name, title) => {
+    this.setState({
+      allRoles: {
+        name: name,
+        title: title,
+      },
+    });
+  };
+
   render() {
     // const listSavedRolePlayers = SavedRolePlayers.map((roleplayer) => {
     //   return (
@@ -145,12 +154,13 @@ class App extends Component {
     //   );
     //});
 
-    const listRolePlayers = ROLESBANK.map((roleplayer) => {
+    const listRolePlayers = ROLESBANK.map((roleplayer, savedRoles) => {
       return (
         <div className="list" key={roleplayer.role}>
           <TechnicalRolePlayersContainer
             category={roleplayer.category}
             role={roleplayer.role}
+            savedRoles={(name, title) => this.savedAllRoles(name, title)}
           />
         </div>
       );
@@ -161,6 +171,8 @@ class App extends Component {
         <h1>Role Players</h1>
         <h2>Meeting 39 - 1 June 2020 - Theme: Celebrity Night</h2>
         <div>{listRolePlayers}</div>
+        <div>{this.state.allRoles.name}</div>
+        <div>{this.state.allRoles.title}</div>
       </div>
     );
   }
