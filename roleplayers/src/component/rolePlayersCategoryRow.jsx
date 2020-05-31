@@ -1,12 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import "../index.css";
 
-class RolePlayersCategoryRow extends Component {
-  render() {
-    const category = this.props.category;
-
-    return <div className="RolePlayersCategoryRow">{category}</div>;
-  }
-}
+const RolePlayersCategoryRow = ({ category }) => {
+  return <div className="RolePlayersCategoryRow">{category}</div>;
+};
 
 export default RolePlayersCategoryRow;
+
+// class RolePlayersCategoryRow extends Component {
+//   render() {
+//     const category = this.props.category;
+
+//     return <div className="RolePlayersCategoryRow">{category}</div>;
+//   }
+// }
+
+// export default RolePlayersCategoryRow;
