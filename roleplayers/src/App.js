@@ -8,11 +8,10 @@ class App extends Component {
     this.state = {
       rolePlayers: [],
       currentRolePlayers: {
-        position: "GE",
         name: "",
         title: "",
         club: "",
-        confirm: null,
+        phonenumber: "",
       },
     };
     this.handleInput = this.handleInput.bind(this);
@@ -38,10 +37,9 @@ class App extends Component {
 
   handleInput(event) {
     const target = event.target;
-
+    console.log(target.key);
     this.setState({
       currentRolePlayers: {
-        position: this.state.currentRolePlayers.position,
         name:
           target.id === "name"
             ? target.value
@@ -54,9 +52,35 @@ class App extends Component {
           target.id === "club"
             ? target.value
             : this.state.currentRolePlayers.club,
+        phonenumber:
+          target.id === "phonenumber"
+            ? target.value
+            : this.state.currentRolePlayers.phonenumber,
       },
     });
   }
+
+  // handleInput(event) {
+  //   const target = event.target;
+
+  //   this.setState({
+  //     currentRolePlayers: {
+  //       position: this.state.currentRolePlayers.position,
+  //       name:
+  //         target.id === "name"
+  //           ? target.value
+  //           : this.state.currentRolePlayers.name,
+  //       title:
+  //         target.id === "title"
+  //           ? target.value
+  //           : this.state.currentRolePlayers.title,
+  //       club:
+  //         target.id === "club"
+  //           ? target.value
+  //           : this.state.currentRolePlayers.club,
+  //     },
+  //   });
+  // }
 
   // handleInputName(event) {
   //   this.setState({
@@ -115,6 +139,7 @@ class App extends Component {
     // console.log(this.state.currentRolePlayers);
 
     const SavedRolePlayers = this.state.rolePlayers;
+
     // const listSavedRolePlayers = SavedRolePlayers.map((roleplayer) => {
     //   return (
     //     <div className="list" key={roleplayer.position}>
@@ -139,7 +164,11 @@ class App extends Component {
           saveInput={this.saveInput}
           rolePlayers={this.state.rolePlayers}
         /> */}
-        <TechnicalRolePlayersContainer roleplayers={ROLEPLAYERS} />
+        <TechnicalRolePlayersContainer
+          roleplayers={ROLEPLAYERS}
+          currentRolePlayers={this.state.currentRolePlayers}
+          handleInput={this.handleInput}
+        />
         {/* <h3>{listSavedRolePlayers}</h3> */}
       </div>
     );
@@ -154,46 +183,6 @@ const ROLEPLAYERS = [
     title: "IP1",
     club: "RunningMan",
     phoneNumber: "12346789",
-  },
-  {
-    category: "Technical Role Players",
-    role: "Photo Master",
-    name: "Henry",
-    title: "MS3",
-    club: "SuperJuniorM",
-    phoneNumber: "97654321",
-  },
-  {
-    category: "Project Speech Speakers",
-    role: "Project Speaker 1",
-    name: "IU",
-    title: "IP2",
-    club: "HotelDelLuna",
-    phoneNumber: "456897123",
-  },
-  {
-    category: "Project Speech Speakers",
-    role: "Evaluator 1",
-    name: "Zico",
-    title: "DL3",
-    club: "AnySong",
-    phoneNumber: "123456783",
-  },
-  {
-    category: "Project Speech Speakers",
-    role: "Project Speaker 2",
-    name: "ParkBoGum",
-    title: "DL3",
-    club: "Reply1988",
-    phoneNumber: "12341988",
-  },
-  {
-    category: "Project Speech Speakers",
-    role: "Evaluator 2",
-    name: "SeoInGuk",
-    title: "DL4",
-    club: "Reply1997",
-    phoneNumber: "123461977",
   },
 ];
 
