@@ -3,24 +3,22 @@ import RolePlayer from "./component/rolePlayer";
 import TechnicalRolePlayersContainer from "./component/technicalRolePlayersContainer";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      rolePlayers: [],
-      currentRolePlayers: {
-        name: "",
-        title: "",
-        club: "",
-        phonenumber: "",
-      },
-    };
-    this.handleInput = this.handleInput.bind(this);
-    // this.handleInputName = this.handleInputName.bind(this);
-    // this.handleInputTitle = this.handleInputTitle.bind(this);
-    // this.handleInputClub = this.handleInputClub.bind(this);
-    // //  this.setUpdate = this.setUpdate.bind(this);
-    this.saveInput = this.saveInput.bind(this);
-  }
+  state = {
+    roles: [],
+  };
+
+  // componentDidMount() {
+  //   this.getRoles();
+  // }
+
+  // getRoles = () => {
+  //   const ROLESBANK = this.ROLESBANK;
+  //   ROLESBANK.map((role) => {
+  //     this.setState({
+  //       roles: this.ROLEPLAYERS,
+  //     });
+  //   });
+  // };
 
   saveInput(name) {
     // e.preventDefault();
@@ -136,10 +134,6 @@ class App extends Component {
   // }
 
   render() {
-    // console.log(this.state.currentRolePlayers);
-
-    const SavedRolePlayers = this.state.rolePlayers;
-
     // const listSavedRolePlayers = SavedRolePlayers.map((roleplayer) => {
     //   return (
     //     <div className="list" key={roleplayer.position}>
@@ -150,43 +144,40 @@ class App extends Component {
     //     </div>
     //   );
     //});
+
+    const listRolePlayers = ROLESBANK.map((roleplayer) => {
+      return (
+        <div className="list" key={roleplayer.role}>
+          <TechnicalRolePlayersContainer
+            category={roleplayer.category}
+            role={roleplayer.role}
+          />
+        </div>
+      );
+    });
     return (
       <div className="App">
         <header className="App-header"></header>
         <h1>Role Players</h1>
         <h2>Meeting 39 - 1 June 2020 - Theme: Celebrity Night</h2>
-        {/* <RolePlayer
-          currentRolePlayers={this.state.currentRolePlayers}
-          handleInput={this.handleInput}
-          // handleInputName={this.handleInputName}
-          // handleInputTitle={this.handleInputTitle}
-          // handleInputClub={this.handleInputClub}
-          saveInput={this.saveInput}
-          rolePlayers={this.state.rolePlayers}
-        /> */}
-        <TechnicalRolePlayersContainer
-          roleplayers={ROLEPLAYERS}
-          currentRolePlayers={this.state.currentRolePlayers}
-          handleInput={this.handleInput}
-        />
-        {/* <h3>{listSavedRolePlayers}</h3> */}
+        <div>{listRolePlayers}</div>
       </div>
     );
   }
 }
 
-const ROLEPLAYERS = [
+export default App;
+
+const ROLESBANK = [
   {
     category: "Technical Role Players",
     role: "ASAA",
-    name: "Haha",
-    title: "IP1",
-    club: "RunningMan",
-    phoneNumber: "12346789",
+  },
+  {
+    category: "Technical Role Players",
+    role: "GE",
   },
 ];
-
-export default App;
 
 // const ROLEPLAYERS = [
 //   {

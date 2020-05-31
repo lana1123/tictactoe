@@ -7,12 +7,8 @@ const RolePlayersCategoryRow = ({ category }) => {
 
 export default RolePlayersCategoryRow;
 
-// class RolePlayersCategoryRow extends Component {
-//   render() {
-//     const category = this.props.category;
-
-//     return <div className="RolePlayersCategoryRow">{category}</div>;
-//   }
-// }
+// const RolePlayersCategoryRow = ({ category }) => {
+//   return <div className="RolePlayersCategoryRow">{category}</div>;
+// };
 
 // export default RolePlayersCategoryRow;
