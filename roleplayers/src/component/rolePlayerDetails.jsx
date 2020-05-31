@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.css";
 
 const RolePlayerDetails = ({ role }) => {
+  const [name, setName] = useState("");
+  const [title, setTitle] = useState("");
+
   return (
     <div className="RolePlayerDetails">
       <div>
         Name:
         <input
           type="text"
+          key={role}
           id="name"
           placeholder="Enter name here..."
-          value={role.name}
-          onChange=""
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
       </div>
       <div>
@@ -20,33 +24,10 @@ const RolePlayerDetails = ({ role }) => {
           type="text"
           id="title"
           placeholder="Enter title here..."
-          value={role.title}
-          onChange=""
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
-      <div>
-        Club:
-        <input
-          type="text"
-          id="club"
-          placeholder="Enter club name here..."
-          value={role.club}
-          onChange=""
-        />
-      </div>
-      <div>
-        Phone Number:
-        <input
-          type="text"
-          id="phonenumber"
-          placeholder="Enter phone number here..."
-          value={role.phoneNumber}
-          onChange=""
-        />
-      </div>
-      {/* <button type="submit" onClick={() => saveInput(roleplayerdetails.name)}>
-        Save
-      </button> */}
     </div>
   );
 };
