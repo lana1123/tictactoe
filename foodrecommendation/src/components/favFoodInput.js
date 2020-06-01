@@ -76,7 +76,7 @@ class FavFoodInput extends Component {
           />
           <button type="submit">Add</button>
         </form>
-        <TotalFavFood />
+        <TotalFavFood totalFood={this.state.food.length} />
         <ListFavFood
           food={this.state.food}
           deleteFood={this.deleteFood}

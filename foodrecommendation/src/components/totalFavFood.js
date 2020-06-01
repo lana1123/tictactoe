@@ -4,7 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; //For nice fon
 import FlipMove from "react-flip-move"; //For animation
 
 //Child list items component / function
-function TotalFavFood({ food }) {
-  return <div className="totalfavfood">You have added X favourite food!</div>;
+function TotalFavFood({ totalFood }) {
+  return (
+    <div className="totalfavfood">
+      You have added {totalFood} favourite food!
+    </div>
+  );
 }
 export default TotalFavFood;
