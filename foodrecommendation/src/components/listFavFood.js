@@ -7,22 +7,24 @@ import FlipMove from "react-flip-move"; //For animation
 function ListFavFood({ food, deleteFood, updateFood }) {
   const listFavFood = food.map((food) => {
     return (
-      <div className="list" key={food.key}>
-        <p>
-          <input
-            type="text"
-            id={food.key}
-            value={food.text}
-            onChange={(e) => updateFood(e.target.value, food.key)}
-          />
-          <span>
-            <FontAwesomeIcon
-              className="faicons"
-              icon="trash"
-              onClick={() => deleteFood(food.key)}
+      <div className="list-container">
+        <div className="list" key={food.key}>
+          <p>
+            <input
+              type="text"
+              id={food.key}
+              value={food.text}
+              onChange={(e) => updateFood(e.target.value, food.key)}
             />
-          </span>
-        </p>
+            <span>
+              <FontAwesomeIcon
+                className="faicons"
+                icon="trash"
+                onClick={() => deleteFood(food.key)}
+              />
+            </span>
+          </p>
+        </div>
       </div>
     );
   });

@@ -7,7 +7,7 @@ import FlipMove from "react-flip-move"; //For animation
 function TotalFavFood({ totalFood }) {
   return (
     <div className="totalfavfood">
-      You have added {totalFood} favourite food!
+      You have added <span>{totalFood}</span> favourite food!
     </div>
   );
 }

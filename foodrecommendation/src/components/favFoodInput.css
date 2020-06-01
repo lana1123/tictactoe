@@ -2,15 +2,16 @@ body {
   background-color: lightpink;
 }
 
-.App {
+/* .App {
   background-color: black;
   min-height: 500px;
   width: 400px;
-  margin: 40px auto; /*top and bottom are 40 pax and it's centred since it's auto*/
-}
+  margin: 40px auto; /*top and bottom are 40 pax and it's centred since it's auto
+} */
+
 .favFoodInput {
   background-color: black;
-  min-height: 500px;
+  height: auto;
   width: 400px;
   margin: 40px auto; /*top and bottom are 40 pax and it's centred since it's auto*/
 }

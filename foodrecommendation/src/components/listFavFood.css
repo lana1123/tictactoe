@@ -1,7 +1,11 @@
+.list-container {
+  margin: 0px auto;
+}
+
 .list {
   color: #fff;
   width: 300px;
-  background-color: hotpink;
+  background-color: lightcoral;
   height: 50px;
   margin: 20px auto;
   border-radius: 5px;
