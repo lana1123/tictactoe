@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import ListFavFood from "./listFavFood";
+import "./favFoodInput.css";
 import { library } from "@fortawesome/fontawesome-svg-core"; //to add the icon into the library?
 import { faTrash } from "@fortawesome/free-solid-svg-icons"; //for the trash icon
+import TotalFavFood from "./totalFavFood";
 
 library.add(faTrash); //to add the trash icon into the library
 
@@ -49,24 +51,37 @@ class FavFoodInput extends Component {
     });
   };
 
+  updateFood = (text, key) => {
+    const favFoods = this.state.food;
+    favFoods.map((food) => {
+      if (food.key === key) {
+        food.text = text;
+      }
+    });
+    this.setState({
+      food: favFoods,
+    });
+  };
+
   render() {
     return (
-      <div>
-        <div>
-          What's your favourite food?
-          <form id="fav-food-form" onSubmit={this.addFood}>
-            <input
-              type="text"
-              placeholder="Enter your favourite food..."
-              value={this.state.currentFood.text}
-              onChange={this.handleInput}
-            />
-            <button type="submit">Add</button>
-          </form>
-        </div>
-        <div>
-          <ListFavFood food={this.state.food} deleteFood={this.deleteFood} />
-        </div>
+      <div className="favFoodInput">
+        What's your favourite food?
+        <form id="fav-food-form" onSubmit={this.addFood}>
+          <input
+            type="text"
+            placeholder="Enter your favourite food..."
+            value={this.state.currentFood.text}
+            onChange={this.handleInput}
+          />
+          <button type="submit">Add</button>
+        </form>
+        <TotalFavFood />
+        <ListFavFood
+          food={this.state.food}
+          deleteFood={this.deleteFood}
+          updateFood={this.updateFood}
+        />
       </div>
     );
   }

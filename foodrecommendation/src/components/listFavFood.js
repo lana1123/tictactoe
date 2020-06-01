@@ -1,14 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
+import "./listFavFood.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; //For nice fonts
 import FlipMove from "react-flip-move"; //For animation
 
 //Child list items component / function
-function ListFavFood({ food, deleteFood }) {
+function ListFavFood({ food, deleteFood, updateFood }) {
   const listFavFood = food.map((food) => {
     return (
-      <div>
+      <div className="list" key={food.key}>
         <p>
-          <input type="text" id={food.key} value={food.text} />
+          <input
+            type="text"
+            id={food.key}
+            value={food.text}
+            onChange={(e) => updateFood(e.target.value, food.key)}
+          />
           <span>
             <FontAwesomeIcon
               className="faicons"
