@@ -4,7 +4,14 @@ import TechnicalRolePlayersContainer from "./component/technicalRolePlayersConta
 
 class App extends Component {
   state = {
-    allRoles: [],
+    allRoles: [
+      {
+        category: "Technical Role Players",
+        role: "ASAA",
+        name: "",
+        title: "",
+      },
+    ],
   };
 
   // componentDidMount() {
@@ -33,30 +40,16 @@ class App extends Component {
     }
   }
 
-  handleInput(event) {
+  handleInput = (event) => {
     const target = event.target;
-    console.log(target.key);
+    console.log("HERE");
     this.setState({
-      currentRolePlayers: {
-        name:
-          target.id === "name"
-            ? target.value
-            : this.state.currentRolePlayers.name,
-        title:
-          target.id === "title"
-            ? target.value
-            : this.state.currentRolePlayers.title,
-        club:
-          target.id === "club"
-            ? target.value
-            : this.state.currentRolePlayers.club,
-        phonenumber:
-          target.id === "phonenumber"
-            ? target.value
-            : this.state.currentRolePlayers.phonenumber,
+      allRoles: {
+        name: target.id === "name" ? target.value : this.state.allRoles.name,
+        title: target.id === "title" ? target.value : this.state.allRoles.title,
       },
     });
-  }
+  };
 
   // handleInput(event) {
   //   const target = event.target;
@@ -134,6 +127,7 @@ class App extends Component {
   // }
 
   savedAllRoles = (name, title) => {
+    // const allRoles = [...this.state.allRoles];
     this.setState({
       allRoles: {
         name: name,
@@ -142,35 +136,40 @@ class App extends Component {
     });
   };
 
-  render() {
-    // const listSavedRolePlayers = SavedRolePlayers.map((roleplayer) => {
-    //   return (
-    //     <div className="list" key={roleplayer.position}>
-    //       <p>{roleplayer.position}</p>
-    //       <p>{roleplayer.name}</p>
-    //       <p>{roleplayer.title}</p>
-    //       <p>{roleplayer.club}</p>
-    //     </div>
-    //   );
-    //});
+  // passAllRoles = (name, title) => {
+  //   this.setState({
+  //     allRoles: {
+  //       name: name,
+  //       title: title,
+  //     },
+  //   });
+  // };
 
-    const listRolePlayers = ROLESBANK.map((roleplayer, savedRoles) => {
-      return (
-        <div className="list" key={roleplayer.role}>
-          <TechnicalRolePlayersContainer
-            category={roleplayer.category}
-            role={roleplayer.role}
-            savedRoles={(name, title) => this.savedAllRoles(name, title)}
-          />
-        </div>
-      );
-    });
+  render() {
+    console.log("RENDER");
+
+    const listRolePlayers = this.state.allRoles.map(
+      (roleplayer, handleInput) => {
+        return (
+          <div className="list" key={roleplayer.role}>
+            <TechnicalRolePlayersContainer
+              category={roleplayer.category}
+              role={roleplayer.role}
+              handleInput={(e) => this.handleInput(e)}
+            />
+          </div>
+        );
+      }
+    );
     return (
       <div className="App">
         <header className="App-header"></header>
         <h1>Role Players</h1>
         <h2>Meeting 39 - 1 June 2020 - Theme: Celebrity Night</h2>
         <div>{listRolePlayers}</div>
+
+        <div>{this.state.allRoles.category}</div>
+        <div>{this.state.allRoles.role}</div>
         <div>{this.state.allRoles.name}</div>
         <div>{this.state.allRoles.title}</div>
       </div>
@@ -190,6 +189,32 @@ const ROLESBANK = [
     role: "GE",
   },
 ];
+
+//version - save input at roleplayerdetails
+// render() {
+//   const listRolePlayers = ROLESBANK.map((roleplayer, savedRoles) => {
+//     return (
+//       <div className="list" key={roleplayer.role}>
+//         <TechnicalRolePlayersContainer
+//           category={roleplayer.category}
+//           role={roleplayer.role}
+//           savedRoles={(name, title) => this.savedAllRoles(name, title)}
+//         />
+//       </div>
+//     );
+//   });
+//   return (
+//     <div className="App">
+//       <header className="App-header"></header>
+//       <h1>Role Players</h1>
+//       <h2>Meeting 39 - 1 June 2020 - Theme: Celebrity Night</h2>
+//       <div>{listRolePlayers}</div>
+//       <div>{this.state.allRoles.name}</div>
+//       <div>{this.state.allRoles.title}</div>
+//     </div>
+//   );
+// }
+// }
 
 // const ROLEPLAYERS = [
 //   {

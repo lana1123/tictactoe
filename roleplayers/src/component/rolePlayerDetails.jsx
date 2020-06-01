@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import "../index.css";
 
-const RolePlayerDetails = ({ role, savedRoles }) => {
-  const [name, setName] = useState("");
-  const [title, setTitle] = useState("");
-
+const RolePlayerDetails = ({ role, handleInput }) => {
   return (
     <div className="RolePlayerDetails">
       <div>
         Name:
         <input
           type="text"
-          key={role}
           id="name"
           placeholder="Enter name here..."
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          value={role.name}
+          onChange={handleInput}
         />
       </div>
       <div>
@@ -24,24 +20,61 @@ const RolePlayerDetails = ({ role, savedRoles }) => {
           type="text"
           id="title"
           placeholder="Enter title here..."
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={role.title}
+          onChange={handleInput}
         />
       </div>
-      <button
-        type="submit"
-        onClick={() => {
-          savedRoles(name, title);
-        }}
-      >
-        Save
-      </button>
     </div>
   );
 };
 
 export default RolePlayerDetails;
 
+//entries no longer hardcoded, only category and roles, change state here, save button for each role
+// const RolePlayerDetails = ({ role, savedRoles }) => {
+//   const [name, setName] = useState("");
+//   const [title, setTitle] = useState("");
+
+//   return (
+//     <div className="RolePlayerDetails">
+//       <div>
+//         Name:
+//         <input
+//           type="text"
+//           key={role}
+//           id="name"
+//           placeholder="Enter name here..."
+//           value={name}
+//           onChange={(e) => {
+//             setName(e.target.value);
+//           }}
+//         />
+//       </div>
+//       <div>
+//         Title:
+//         <input
+//           type="text"
+//           id="title"
+//           placeholder="Enter title here..."
+//           value={title}
+//           onChange={(e) => {
+//             setTitle(e.target.value);
+//           }}
+//         />
+//       </div>
+//       <button
+//         type="submit"
+//         onClick={() => {
+//           savedRoles(name, title);
+//         }}
+//       >
+//         Save
+//       </button>
+//     </div>
+//   );
+// };
+
+//initial version when all entries are hardcoded and all states are handled in App
 // const RolePlayerDetails = ({ roleplayerdetails, handleInput, saveInput }) => {
 //   return (
 //     <div className="RolePlayerDetails">

@@ -2,12 +2,12 @@ import React from "react";
 import RolePlayerDetails from "./rolePlayerDetails";
 import "../index.css";
 
-const RolePlayersRole = ({ role, savedRoles }) => {
+const RolePlayersRole = ({ roleplayerdetails, handleInput }) => {
   return (
     <div>
-      <div className="RolePlayersRole">{role}</div>
+      <div className="RolePlayersRole">{roleplayerdetails.role}</div>
       <div>
-        <RolePlayerDetails role={role} savedRoles={savedRoles} />
+        <RolePlayerDetails role={roleplayerdetails} handleInput={handleInput} />
       </div>
     </div>
   );
