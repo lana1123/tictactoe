@@ -42,6 +42,13 @@ class FavFoodInput extends Component {
     }
   };
 
+  deleteFood = (key) => {
+    const filteredFavFood = this.state.food.filter((food) => food.key !== key);
+    this.setState({
+      food: filteredFavFood,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -58,7 +65,7 @@ class FavFoodInput extends Component {
           </form>
         </div>
         <div>
-          <ListFavFood food={this.state.food} />
+          <ListFavFood food={this.state.food} deleteFood={this.deleteFood} />
         </div>
       </div>
     );
