@@ -1,12 +1,26 @@
 import React from "react";
-import FavFoodInput from "./components/favFoodInput";
+import FoodList from "./components/foodList";
+import NavBar from "./components/navbar";
+import RandomPick from "./components/randomPick";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <NavBar />
       <header className="App-header">
-        <FavFoodInput />
+        <Switch>
+          <Route path="/" exact component={RandomPick} />
+          <Route path="/foodlist" component={FoodList} />
+          <Route path="/randompick" component={RandomPick} />
+        </Switch>
       </header>
-    </div>
+    </Router>
   );
 }
 

@@ -1,0 +1,12 @@
+.navbar {
+  margin: 0px auto 10px auto;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  background-color: black;
+}
+
+.navbar-entry {
+  margin: 0px 20px;
+  color: white;
+}

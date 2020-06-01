@@ -2,11 +2,11 @@ import React from "react";
 import "./totalFavFood.css";
 
 //Child list items component / function
-function TotalFavFood({ totalFood }) {
+function RandomPick() {
   return (
     <div className="totalfavfood">
-      You have added <span>{totalFood}</span> favourite food!
+      <h2>RandomPick</h2>
     </div>
   );
 }
-export default TotalFavFood;
+export default RandomPick;

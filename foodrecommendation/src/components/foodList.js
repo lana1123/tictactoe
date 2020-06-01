@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import ListFavFood from "./listFavFood";
-import "./favFoodInput.css";
+import "./foodList.css";
 import { library } from "@fortawesome/fontawesome-svg-core"; //to add the icon into the library?
 import { faTrash } from "@fortawesome/free-solid-svg-icons"; //for the trash icon
 import TotalFavFood from "./totalFavFood";
 
 library.add(faTrash); //to add the trash icon into the library
 
-class FavFoodInput extends Component {
+class FoodList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -87,4 +87,4 @@ class FavFoodInput extends Component {
   }
 }
 
-export default FavFoodInput;
+export default FoodList;
