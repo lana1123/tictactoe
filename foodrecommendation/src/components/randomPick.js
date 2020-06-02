@@ -1,16 +1,13 @@
 import React from "react";
-import "./totalFavFood.css";
+import "./randomPick.css";
 
 //Child list items component / function
 const RandomPick = ({ food, handleClick, pickedFood }) => {
   return (
-    <div className="">
+    <div className="randomPickContainer">
       <h2>Suggest me food for the time</h2>
-      {food.map((food) => (
-        <div>{food.text}</div>
-      ))}
       <button onClick={handleClick}>Pick</button>
-      <div>
+      <div className="randomPick">
         {pickedFood.map((food) => (
           <div>{food.text}</div>
         ))}
