@@ -24,6 +24,7 @@ class App extends Component {
   }
 
   handleInput = (e) => {
+    this.text = e.target.value;
     this.setState({
       currentFood: {
         text: e.target.value,
@@ -75,13 +76,14 @@ class App extends Component {
             <Route path="/" exact component={RandomPick} />
             <Route
               path="/foodlist"
-              component={() => (
+              render={(props) => (
                 <FoodList
+                  {...props}
                   food={this.state.food}
-                  updateFood={this.updateFood}
-                  addFood={this.addFood}
-                  deleteFood={this.deleteFood}
                   handleInput={this.handleInput}
+                  addFood={this.addFood}
+                  updateFood={this.updateFood}
+                  deleteFood={this.deleteFood}
                   currentFood={this.state.currentFood}
                 />
               )}
