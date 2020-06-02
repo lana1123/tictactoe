@@ -5,8 +5,6 @@ import "./navBar.css";
 //stateless functional component
 
 const NavBar = () => {
-  console.log("NavBar - Rendered");
-
   return (
     <nav className="navbar">
       <Link to="/foodlist" className="navbar-entry">

@@ -12,6 +12,7 @@ import {
 class App extends Component {
   state = {
     //declaring a state where items containing text and key
+    pickedFood: [],
     food: [],
     currentFood: {
       text: "",
@@ -30,6 +31,15 @@ class App extends Component {
         text: e.target.value,
         key: Date.now(),
       },
+    });
+  };
+
+  handleClick = () => {
+    const foodList = this.state.food;
+    console.log("INSIDE");
+
+    this.setState({
+      pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, 1),
     });
   };
 
@@ -90,7 +100,13 @@ class App extends Component {
             />
             <Route
               path="/randompick"
-              component={() => <RandomPick food={this.state.food} />}
+              component={() => (
+                <RandomPick
+                  food={this.state.food}
+                  handleClick={this.handleClick}
+                  pickedFood={this.state.pickedFood}
+                />
+              )}
             />
           </Switch>
         </header>
