@@ -11,9 +11,10 @@ body {
 
 .favFoodInput {
   background-color: black;
-  min-height: 250px;
+  /* min-height: 250px; */
   width: 400px;
   margin: 40px auto; /*top and bottom are 40 pax and it's centred since it's auto*/
+  padding-block-end: 20px;
 }
 
 #fav-food-form input {
