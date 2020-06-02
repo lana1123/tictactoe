@@ -2,11 +2,14 @@ import React from "react";
 import "./totalFavFood.css";
 
 //Child list items component / function
-function RandomPick() {
+const RandomPick = ({ food }) => {
   return (
-    <div className="totalfavfood">
-      <h2>RandomPick</h2>
+    <div className="">
+      <h2>Suggest me food for the time</h2>
+      {food.map((food) => (
+        <div>{food.text}</div>
+      ))}
     </div>
   );
-}
+};
 export default RandomPick;

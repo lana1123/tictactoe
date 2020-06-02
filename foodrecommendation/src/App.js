@@ -88,7 +88,10 @@ class App extends Component {
                 />
               )}
             />
-            <Route path="/randompick" component={RandomPick} />
+            <Route
+              path="/randompick"
+              component={() => <RandomPick food={this.state.food} />}
+            />
           </Switch>
         </header>
       </Router>
