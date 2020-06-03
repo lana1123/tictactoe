@@ -39,7 +39,7 @@ class App extends Component {
     console.log("INSIDE");
 
     this.setState({
-      pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, 1),
+      pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, 3),
     });
   };
 
