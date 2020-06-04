@@ -35,13 +35,18 @@ class App extends Component {
     });
   };
 
-  handleClick = () => {
+  handleClick = (e) => {
+    // this.setState({
+    //   duration: e.target.value,
+    // });
     const foodList = this.state.food;
-    const dur = this.state.duration;
-    console.log(dur);
+    const dur = e.target.value;
+    // console.log(dur);
     var n = 1;
 
-    if (dur === "timebeing") {
+    if (dur === "duration") {
+      n = 0;
+    } else if (dur === "timebeing") {
       n = 1;
     } else if (dur === "day") {
       n = 2;
@@ -52,6 +57,7 @@ class App extends Component {
     }
 
     this.setState({
+      duration: e.target.value,
       pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, n),
     });
   };

@@ -2,10 +2,21 @@
   background-color: rgb(27, 112, 137);
   border: 0;
   width: 210px;
-  height: 50px;
+  height: auto;
   padding: 0 20px;
   margin: 20px;
   font-size: 18px;
   border-radius: 10px;
   color: #fff;
+}
+
+.drop-down {
+  background: transparent;
+  opacity: 0.4;
+}
+
+/* for each selection */
+.drop-down option {
+  color: red;
+  background: none;
 }
