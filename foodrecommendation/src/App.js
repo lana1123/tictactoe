@@ -13,6 +13,7 @@ class App extends Component {
   state = {
     //declaring a state where items containing text and key
     pickedFood: [],
+    duration: "timebeing",
     food: [],
     currentFood: {
       text: "",
@@ -36,10 +37,22 @@ class App extends Component {
 
   handleClick = () => {
     const foodList = this.state.food;
-    console.log("INSIDE");
+    const dur = this.state.duration;
+    console.log(dur);
+    var n = 1;
+
+    if (dur === "timebeing") {
+      n = 1;
+    } else if (dur === "day") {
+      n = 2;
+    } else if (dur === "week") {
+      n = 3;
+    } else {
+      n = 4;
+    }
 
     this.setState({
-      pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, 3),
+      pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, n),
     });
   };
 
@@ -77,6 +90,12 @@ class App extends Component {
     });
   };
 
+  handleDuration = (e) => {
+    this.setState({
+      duration: e.target.value,
+    });
+  };
+
   render() {
     return (
       <Router>
@@ -105,6 +124,8 @@ class App extends Component {
                   food={this.state.food}
                   handleClick={this.handleClick}
                   pickedFood={this.state.pickedFood}
+                  duration={this.state.duration}
+                  handleDuration={this.handleDuration}
                 />
               )}
             />
