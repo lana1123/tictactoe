@@ -36,13 +36,12 @@ class App extends Component {
   };
 
   handleClick = (e) => {
-    // this.setState({
-    //   duration: e.target.value,
-    // });
     const foodList = this.state.food;
-    const dur = e.target.value;
-    // console.log(dur);
+    // const dur = e.target.value;
+
     var n = 1;
+    const dur = this.state.duration;
+    console.log(dur);
 
     if (dur === "duration") {
       n = 0;

@@ -19,3 +19,9 @@
   color: white;
   margin: 40px 20px 20px 40px;
 }
+
+.randomPickContainer p {
+  color: white;
+  padding-top: 20px;
+  margin: 40px 20px 20px 40px; /*top and bottom are 40 pax and it's centred since it's auto*/
+}

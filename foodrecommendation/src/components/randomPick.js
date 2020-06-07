@@ -8,14 +8,14 @@ const RandomPick = ({
   handleClick,
   pickedFood,
   duration,
-  // handleDuration,
+  handleDuration,
 }) => {
   return (
     <div className="randomPickContainer">
       <h2>
         Suggest me food for the
         <span className="drop-down">
-          <select value={duration} onChange={handleClick}>
+          <select value={duration} onChange={handleDuration}>
             <option selected value="duration">
               (Choose your duration)
             </option>
@@ -26,8 +26,12 @@ const RandomPick = ({
           </select>
         </span>
       </h2>
-      {/* <button onClick={handleClick}>Pick</button> */}
-      <RandomPickResults pickedFood={pickedFood} />
+      <button onClick={handleClick}>Pick</button>
+      {food.length > 0 ? (
+        <RandomPickResults pickedFood={pickedFood} />
+      ) : (
+        <p>You have not entered any favourite food</p>
+      )}
     </div>
   );
 };

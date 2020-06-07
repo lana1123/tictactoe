@@ -9,7 +9,14 @@ library.add(faTrash); //to add the trash icon into the library
 
 class FoodList extends Component {
   render() {
-    const { food, deleteFood, addFood, handleInput, updateFood } = this.props;
+    const {
+      food,
+      deleteFood,
+      addFood,
+      handleInput,
+      updateFood,
+      currentFood,
+    } = this.props;
 
     return (
       <div className="favFoodInput">
@@ -18,7 +25,7 @@ class FoodList extends Component {
           <input
             type="text"
             placeholder="Enter your favourite food..."
-            value={this.props.currentFood.text}
+            value={currentFood.text}
             onChange={handleInput}
           />
           <button type="submit">Add</button>
