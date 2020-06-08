@@ -23,9 +23,11 @@ const RandomPick = ({
             <option value="month">Month</option>
           </select>
         </div>
+
         <div>
           <button onClick={handleClick}>Pick</button>
         </div>
+
         <div>
           {food && food.length > 0 ? (
             <RandomPickResults pickedFood={pickedFood} />

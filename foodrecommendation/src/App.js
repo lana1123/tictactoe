@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import FoodList from "./components/foodList";
 import NavBar from "./components/navbar";
 import RandomPick from "./components/randomPick";
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -106,7 +107,7 @@ class App extends Component {
         <NavBar />
         <header className="App-header">
           <Switch>
-            <Route path="/" exact component={RandomPick} />
+            <Route path="/" exact component={FoodList} />
             <Route
               path="/foodlist"
               render={(props) => (
@@ -130,6 +131,7 @@ class App extends Component {
                   pickedFood={this.state.pickedFood}
                   duration={this.state.duration}
                   handleDuration={this.handleDuration}
+                  isFlipped={this.isFlipped}
                 />
               )}
             />

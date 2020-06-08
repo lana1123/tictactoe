@@ -5,13 +5,12 @@
 
 .randomPickResults {
   background-color: lightcoral;
-  border: 0;
   width: 210px;
-  height: auto;
-  padding: 0 20px;
-  margin: 20px;
-  font-size: 18px;
-  border-radius: 10px;
+  height: 30px;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
   color: #fff;
   text-align: center;
 }

@@ -9,4 +9,5 @@
 .navbar-entry {
   margin: 0px 20px;
   color: white;
+  text-decoration: none; /*to remove underline*/
 }

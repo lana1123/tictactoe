@@ -25,17 +25,19 @@ class FoodList extends Component {
           <input
             type="text"
             placeholder="Enter your favourite food..."
-            value={currentFood.text}
+            value={currentFood ? currentFood.text : ""}
             onChange={handleInput}
           />
           <button type="submit">Add</button>
         </form>
-        <TotalFavFood totalFood={food.length} />
-        <ListFavFood
-          food={food}
-          deleteFood={deleteFood}
-          updateFood={updateFood}
-        />
+        <TotalFavFood totalFood={food ? food.length : null} />
+        {food ? (
+          <ListFavFood
+            food={food}
+            deleteFood={deleteFood}
+            updateFood={updateFood}
+          />
+        ) : null}
       </div>
     );
   }
