@@ -13,7 +13,7 @@ class App extends Component {
   state = {
     //declaring a state where items containing text and key
     pickedFood: [],
-    duration: "timebeing",
+    duration: "duration",
     food: [],
     currentFood: {
       text: "",
@@ -35,9 +35,8 @@ class App extends Component {
     });
   };
 
-  handleClick = (e) => {
+  handleClick = () => {
     const foodList = this.state.food;
-    // const dur = e.target.value;
 
     var n = 1;
     const dur = this.state.duration;
@@ -56,7 +55,7 @@ class App extends Component {
     }
 
     this.setState({
-      duration: e.target.value,
+      duration: dur,
       pickedFood: foodList.sort(() => 0.5 - Math.random()).slice(0, n),
     });
   };

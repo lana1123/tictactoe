@@ -16,9 +16,7 @@ const RandomPick = ({
         Suggest me food for the
         <span className="drop-down">
           <select value={duration} onChange={handleDuration}>
-            <option selected value="duration">
-              (Choose your duration)
-            </option>
+            <option value="duration">(Choose your duration)</option>
             <option value="timebeing">Time being</option>
             <option value="day">Day</option>
             <option value="week">Week</option>
@@ -27,7 +25,7 @@ const RandomPick = ({
         </span>
       </h2>
       <button onClick={handleClick}>Pick</button>
-      {food.length > 0 ? (
+      {food && food.length > 0 ? (
         <RandomPickResults pickedFood={pickedFood} />
       ) : (
         <p>You have not entered any favourite food</p>
