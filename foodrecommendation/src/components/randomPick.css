@@ -1,27 +1,71 @@
+.randomPickPage {
+  display: flex;
+  justify-content: center;
+}
+
 .randomPickContainer {
   background-color: black;
   min-height: 250px;
   width: 400px;
-  margin: 40px auto; /*top and bottom are 40 pax and it's centred since it's auto*/
+  /* margin: 40px auto; /*top and bottom are 40 pax and it's centred since it's auto*/
 }
 
-.randomPickContainer h2 {
+.promptText {
   color: white;
   padding-top: 20px;
-  margin: 40px 20px 20px 40px; /*top and bottom are 40 pax and it's centred since it's auto*/
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+  /* width: 400px;
+  align-items: center; */
+
+  /*margin: 40px 20px 20px 40px; /*top and bottom are 40 pax and it's centred since it's auto*/
+}
+
+.drop-down {
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  background: transparent;
+  /* opacity: 0.4; */
+}
+
+.drop-down select {
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  text-align-last: center;
+}
+
+.drop-down option {
+  font-size: 16px;
+  background-color: black;
+  color: white;
 }
 
 .randomPickContainer button {
-  margin: auto 40px;
+  /* margin: auto 40px auto 180px; */
+  margin: 20px auto; /*to make it center*/
+  display: block; /*to make it center*/
+  font-size: 40px;
+  background-color: grey;
+  border-radius: 50%;
+  border-width: 2px;
+  height: 80px;
+  border-color: cornflowerblue;
 }
 
 .randomPick {
   color: white;
-  margin: 40px 20px 20px 40px;
+  /* margin: 40px 20px 20px 40px; */
 }
 
 .randomPickContainer p {
   color: white;
   padding-top: 20px;
-  margin: 40px 20px 20px 40px; /*top and bottom are 40 pax and it's centred since it's auto*/
+  position: relative;
+  text-align: center;
+  /*margin: 40px 20px 20px 40px; /*top and bottom are 40 pax and it's centred since it's auto*/
 }

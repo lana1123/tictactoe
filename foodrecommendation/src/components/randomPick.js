@@ -11,10 +11,10 @@ const RandomPick = ({
   handleDuration,
 }) => {
   return (
-    <div className="randomPickContainer">
-      <h2>
-        Suggest me food for the
-        <span className="drop-down">
+    <div className="randomPickPage">
+      <div className="randomPickContainer">
+        <div className="promptText">Suggest me food for the</div>
+        <div className="drop-down">
           <select value={duration} onChange={handleDuration}>
             <option value="duration">(Choose your duration)</option>
             <option value="timebeing">Time being</option>
@@ -22,14 +22,18 @@ const RandomPick = ({
             <option value="week">Week</option>
             <option value="month">Month</option>
           </select>
-        </span>
-      </h2>
-      <button onClick={handleClick}>Pick</button>
-      {food && food.length > 0 ? (
-        <RandomPickResults pickedFood={pickedFood} />
-      ) : (
-        <p>You have not entered any favourite food</p>
-      )}
+        </div>
+        <div>
+          <button onClick={handleClick}>Pick</button>
+        </div>
+        <div>
+          {food && food.length > 0 ? (
+            <RandomPickResults pickedFood={pickedFood} />
+          ) : (
+            <p>You have not entered any favourite food</p>
+          )}
+        </div>
+      </div>
     </div>
   );
 };

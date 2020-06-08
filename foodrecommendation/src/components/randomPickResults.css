@@ -1,5 +1,10 @@
+.randomPickResultsPage {
+  display: flex;
+  justify-content: center;
+}
+
 .randomPickResults {
-  background-color: rgb(27, 112, 137);
+  background-color: lightcoral;
   border: 0;
   width: 210px;
   height: auto;
@@ -8,15 +13,5 @@
   font-size: 18px;
   border-radius: 10px;
   color: #fff;
-}
-
-.drop-down {
-  background: transparent;
-  opacity: 0.4;
-}
-
-/* for each selection */
-.drop-down option {
-  color: red;
-  background: none;
+  text-align: center;
 }

@@ -4,8 +4,10 @@ import "./randomPickResults.css";
 //Child list items component / function
 const RandomPickResults = ({ pickedFood }) => {
   return (
-    <div className="randomPickResults">
-      {pickedFood && pickedFood.map((food) => <div>{food.text}</div>)}
+    <div className="randomPickResultsPage">
+      <div className="randomPickResults">
+        {pickedFood && pickedFood.map((food) => <div>{food.text}</div>)}
+      </div>
     </div>
   );
 };
