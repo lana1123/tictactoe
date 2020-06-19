@@ -107,7 +107,11 @@ class App extends Component {
         <NavBar />
         <header className="App-header">
           <Switch>
-            <Route path="/" exact component={FoodList} />
+            <Route
+              exact
+              path="/foodRecommendationBasicDemo"
+              component={FoodList}
+            />
             <Route
               path="/foodlist"
               render={(props) => (
